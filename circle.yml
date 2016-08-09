@@ -2,3 +2,4 @@ test:
   override:
     - make
     - ./dump
+    - ls
