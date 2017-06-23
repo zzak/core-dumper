@@ -15,4 +15,4 @@ jobs:
           command: ls
           when: always
       - store_artifacts:
-          path: ./core*
+          path: ./core.*
