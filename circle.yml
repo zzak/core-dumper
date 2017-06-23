@@ -12,7 +12,10 @@ jobs:
           ulimit -c unlimited
           ./dump
       - run:
-          command: ls
-          when: always
+          command: |
+            ls
+            mkdir -p /tmp/core_dumps
+            cp core.* /tmp/core_dumps
+          when: on_failure
       - store_artifacts:
-          path: ./core.*
+          path: /tmp/core_dumps
