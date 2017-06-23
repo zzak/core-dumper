@@ -14,4 +14,4 @@ jobs:
           command: ls
           when: always
       - store_artifacts:
-          paths: ~/work
+          path: ~/work
