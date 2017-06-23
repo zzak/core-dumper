@@ -8,7 +8,10 @@ jobs:
     steps:
       - checkout
       - run: make
+      - run: ulimit -c unlimited
       - run: ./dump
       - run:
           command: ls
           when: always
+      - store_artifacts:
+          paths: ~/work
