@@ -4,6 +4,9 @@ jobs:
   build:
     docker:
       - image: gcc:latest
+    environment:
+      CORE_DUMPS: &core_dumps
+        /tmp/core_dumps
     working_directory: ~/work
     steps:
       - checkout
@@ -14,8 +17,8 @@ jobs:
       - run:
           command: |
             ls
-            mkdir -p /tmp/core_dumps
-            cp core.* /tmp/core_dumps
+            mkdir -p $CORE_DUMPS
+            cp core.* $CORE_DUMPS
           when: always
       - store_artifacts:
-          path: /tmp/core_dumps
+          path: *core_dumps
