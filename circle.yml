@@ -8,8 +8,9 @@ jobs:
     steps:
       - checkout
       - run: make
-      - run: ulimit -c unlimited
-      - run: ./dump
+      - run: |
+        ulimit -c unlimited
+        ./dump
       - run:
           command: ls
           when: always
