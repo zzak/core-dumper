@@ -9,4 +9,6 @@ jobs:
       - checkout
       - run: make
       - run: ./dump
-      - run: ls
+      - run:
+          command: ls
+          when: always
