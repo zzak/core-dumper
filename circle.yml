@@ -16,6 +16,6 @@ jobs:
             ls
             mkdir -p /tmp/core_dumps
             cp core.* /tmp/core_dumps
-          when: on_failure
+          when: always
       - store_artifacts:
           path: /tmp/core_dumps
