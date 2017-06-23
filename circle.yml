@@ -6,6 +6,7 @@ jobs:
       - image: gcc:latest
     working_directory: ~/work
     steps:
+      - checkout
       - run: make
       - run: ./dump
       - run: ls
