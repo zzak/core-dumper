@@ -1,5 +1,11 @@
-test:
-  override:
-    - make
-    - ./dump
-    - ls
+version: 2.0
+
+jobs:
+  build:
+    docker:
+      - image: gcc:latest
+    working_directory: ~/work
+    steps:
+      - run: make
+      - run: ./dump
+      - run: ls
