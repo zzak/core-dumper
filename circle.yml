@@ -10,7 +10,8 @@ jobs:
       - run: make
       - run: |
           ulimit -c unlimited
-          ./dump
+          #./dump
+          echo "Hello, world!"
       - run:
           command: |
             mkdir -p /tmp/core_dumps
